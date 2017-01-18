@@ -4,7 +4,10 @@ const setupRoutes = ($stateProvider) => {
     $stateProvider
         .state('home', {
         url: '/',
-        template: '<h3>hello world!</h3>'
+        template: `
+            <h3>Hello World!</h3>
+            <item></item>
+        `,
     });
 };
 
@@ -14,6 +17,7 @@ const enableHtml5Mode = ($locationProvider) => {
 
 module.exports = angular.module('ngReactExample', [
   require('angular-ui-router'),
+  require('./components/Item').name,
 ])
 .config(enableHtml5Mode)
 .config(setupRoutes);
